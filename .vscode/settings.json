@@ -1,5 +1,8 @@
 {
-    "java.project.sourcePaths": ["src"],
+    "java.project.sourcePaths": [
+        "src"
+    ],
     "java.project.outputPath": "bin",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "java.dependency.packagePresentation": "hierarchical"
 }
