@@ -10,7 +10,6 @@ public class Stats {
     private int bitcoins;
 
     /*----------------------- Stats --------------------------*/
-
     private int maxHealth;
     private int armor;
     private int healthRegen;
