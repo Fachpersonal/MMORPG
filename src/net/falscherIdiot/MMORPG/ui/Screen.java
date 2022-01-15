@@ -2,17 +2,25 @@ package net.falscherIdiot.MMORPG.ui;
 
 import java.util.ArrayList;
 
-//! TODO: Needs work | Fully implement Screen
-public class Screen {
+public abstract class Screen {
 
-    private ArrayList<Screen> previousScreens;
+    private static ArrayList<Screen> previousScreens;
 
-    public Screen() {
+    private String title;
+
+    public Screen(String title) {
         previousScreens = new ArrayList<>();
+        this.title = title;
     }
 
-    public ArrayList<Screen> getPreviousScreens() {
+    public static ArrayList<Screen> getPreviousScreens() {
         return previousScreens;
+    }
+
+    public abstract void displayScreen();
+
+    public String getTitle() {
+        return title;
     }
 
 }
