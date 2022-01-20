@@ -1,0 +1,22 @@
+{
+    "wooden_sword": {
+        "id": 0,
+        "rarity": "COMMON",
+        "weaponType": "primary",
+        "level": 4,
+        "durability": 128,
+        "dmg": 6,
+        "price": 10,
+        "lore": "You found some sticks and some stones, so you made a sword out of it"
+    },
+    "stone_sword": {
+        "id": 1,
+        "rarity": "COMMON",
+        "weaponType": "primary",
+        "level": 4,
+        "durability": 128,
+        "dmg": 6,
+        "price": 10,
+        "lore": "You found some sticks and some stones, so you made a sword out of it"
+    }
+}

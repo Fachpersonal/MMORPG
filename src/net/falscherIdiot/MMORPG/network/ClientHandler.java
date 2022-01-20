@@ -25,8 +25,12 @@ public class ClientHandler implements Runnable {
 
     @Override
     public void run() {
+
+        String line;
+
         while (!client.isClosed()) {
             // ! TODO: Needs work | Manage messaging and using of Options etc.
+
         }
     }
 

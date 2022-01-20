@@ -7,7 +7,7 @@ public class Stats {
 
     /*----------------------- Player --------------------------*/
     private String username;
-    private int bitcoins;
+    private int emeralds;
 
     /*----------------------- Stats --------------------------*/
     private int maxHealth;
@@ -23,24 +23,22 @@ public class Stats {
     private int healingMultiplier; // max: 100%
     private int g1dmg;
     private int g2dmg;
-    private int g3dmg;
 
     /*----------------------- Levels --------------------------*/
     private int level;
     private int exp; // EXP:[----------](63/17724)
-    private int printingRank;// EXP:[----------](766/8378)
-    private int medicalScience;// EXP:[|||||||||-](6093/6094)
-    private int ammoCrafting;// EXP:[----------](174/8378)
-    private int scavengeSkill;// EXP:[|||||||||-](14528/14529)
-    private int miningSkill;// EXP:[|||||||||-](14528/14529)
+    private int miningSkill;// EXP:[----------](766/8378)
+    private int brewingSkill;// EXP:[|||||||||-](6093/6094)
+    private int craftingSkill;// EXP:[----------](174/8378)
+    private int fightingSkill;// EXP:[|||||||||-](14528/14529)
+    private int adventureSkill;// EXP:[|||||||||-](14528/14529)
 
     /*----------------------- Equipped --------------------------*/
     private Weapon primaryWeapon;
-    private Weapon specialWeapon;
-    private Weapon destructiveWeapon;
+    private Weapon secondaryWeapon;
     private Armor helmet;
-    private Armor upperArmor;
-    private Armor lowerArmor;
+    private Armor chestplate;
+    private Armor leggins;
     private Armor boots;
 
     /*----------------------- Inventory --------------------------*/
@@ -52,13 +50,13 @@ public class Stats {
     public Stats(String username) {
         /*----------------------- Player --------------------------*/
         this.username = username;
-        this.bitcoins = 0;
+        this.emeralds = 0;
 
         /*----------------------- Stats --------------------------*/
-        this.maxHealth = 12;
+        this.maxHealth = 20;
         this.armor = 0;
         this.healthRegen = 0;
-        this.dmg = 5;
+        this.dmg = 1;
         this.critChance = 0;
         this.critDamage = 0;
         this.maxShield = 0;
@@ -67,26 +65,29 @@ public class Stats {
         this.shieldMultiplier = 1;
         this.healingMultiplier = 1;
         this.g1dmg = primaryWeapon.getDmg();
-        this.g2dmg = specialWeapon.getDmg();
-        this.g3dmg = destructiveWeapon.getDmg();
+        this.g2dmg = secondaryWeapon.getDmg();
 
         /*----------------------- Levels --------------------------*/
         this.level = 1;
-        this.printingRank = 1;
-        this.medicalScience = 1;
-        this.ammoCrafting = 1;
-        this.scavengeSkill = 1;
         this.miningSkill = 1;
+        this.brewingSkill = 1;
+        this.craftingSkill = 1;
+        this.fightingSkill = 1;
+        this.adventureSkill = 1;
 
         /*----------------------- Equipped --------------------------*/
-        this.primaryWeapon = new Weapon(WeaponType.PRIMARY, Rarity.TRASH, 1, 25, 5, 1, 1);
-        this.specialWeapon = null;
-        this.destructiveWeapon = null;
+        this.primaryWeapon = new Weapon(WeaponType.PRIMARY, Rarity.TRASH, 1, -1, 5, 1, -1);
+        this.secondaryWeapon = null;
+        this.helmet = null;
+        this.chestplate = null;
+        this.leggins = null;
+        this.boots = null;
 
         /*----------------------- Inventory --------------------------*/
         this.items = new Item[30];
         this.status = "idle";
         this.location = "City Center";
+
     }
 
     public String getUsername() {
@@ -97,12 +98,12 @@ public class Stats {
         this.username = username;
     }
 
-    public int getBitcoins() {
-        return bitcoins;
+    public int getEmeralds() {
+        return emeralds;
     }
 
-    public void setBitcoins(int bitcoins) {
-        this.bitcoins = bitcoins;
+    public void setEmeralds(int emeralds) {
+        this.emeralds = emeralds;
     }
 
     public int getMaxHealth() {
@@ -209,14 +210,6 @@ public class Stats {
         this.g2dmg = g2dmg;
     }
 
-    public int getG3dmg() {
-        return g3dmg;
-    }
-
-    public void setG3dmg(int g3dmg) {
-        this.g3dmg = g3dmg;
-    }
-
     public int getLevel() {
         return level;
     }
@@ -233,44 +226,44 @@ public class Stats {
         this.exp = exp;
     }
 
-    public int getPrintRank() {
-        return printingRank;
-    }
-
-    public void setPrintRank(int printingRank) {
-        this.printingRank = printingRank;
-    }
-
-    public int getMedicalScience() {
-        return medicalScience;
-    }
-
-    public void setMedicalScience(int medicalScience) {
-        this.medicalScience = medicalScience;
-    }
-
-    public int getAmmoCrafting() {
-        return ammoCrafting;
-    }
-
-    public void setAmmoCrafting(int ammoCrafting) {
-        this.ammoCrafting = ammoCrafting;
-    }
-
-    public int getScavengeSkill() {
-        return scavengeSkill;
-    }
-
-    public void setScavengeSkill(int scavengeSkill) {
-        this.scavengeSkill = scavengeSkill;
-    }
-
     public int getMiningSkill() {
         return miningSkill;
     }
 
     public void setMiningSkill(int miningSkill) {
         this.miningSkill = miningSkill;
+    }
+
+    public int getBrewingSkill() {
+        return brewingSkill;
+    }
+
+    public void setBrewingSkill(int brewingSkill) {
+        this.brewingSkill = brewingSkill;
+    }
+
+    public int getCraftingSkill() {
+        return craftingSkill;
+    }
+
+    public void setCraftingSkill(int craftingSkill) {
+        this.craftingSkill = craftingSkill;
+    }
+
+    public int getFightingSkill() {
+        return fightingSkill;
+    }
+
+    public void setFightingSkill(int fightingSkill) {
+        this.fightingSkill = fightingSkill;
+    }
+
+    public int getAdventureSkill() {
+        return adventureSkill;
+    }
+
+    public void getAdventureSkill(int adventureSkill) {
+        this.adventureSkill = adventureSkill;
     }
 
     public Weapon getPrimaryWeapon() {
@@ -281,20 +274,12 @@ public class Stats {
         this.primaryWeapon = primaryWeapon;
     }
 
-    public Weapon getSpecialWeapon() {
-        return specialWeapon;
+    public Weapon getSecondaryWeapon() {
+        return secondaryWeapon;
     }
 
-    public void setSpecialWeapon(Weapon specialWeapon) {
-        this.specialWeapon = specialWeapon;
-    }
-
-    public Weapon getDestructiveWeapon() {
-        return destructiveWeapon;
-    }
-
-    public void setDestructiveWeapon(Weapon destructiveWeapon) {
-        this.destructiveWeapon = destructiveWeapon;
+    public void setSecondaryWeapon(Weapon secondaryWeapon) {
+        this.secondaryWeapon = secondaryWeapon;
     }
 
     public Armor getHelmet() {
@@ -305,20 +290,20 @@ public class Stats {
         this.helmet = helmet;
     }
 
-    public Armor getUpperArmor() {
-        return upperArmor;
+    public Armor getChestplate() {
+        return chestplate;
     }
 
-    public void setUpperArmor(Armor upperArmor) {
-        this.upperArmor = upperArmor;
+    public void setChestplate(Armor chestplate) {
+        this.chestplate = chestplate;
     }
 
-    public Armor getLowerArmor() {
-        return lowerArmor;
+    public Armor getLeggins() {
+        return leggins;
     }
 
-    public void setLowerArmor(Armor lowerArmor) {
-        this.lowerArmor = lowerArmor;
+    public void setLeggins(Armor leggins) {
+        this.leggins = leggins;
     }
 
     public Armor getBoots() {
